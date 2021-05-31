@@ -85,6 +85,17 @@
                 phoneError.textContent = "Phone number is Incorrect";
         });
 
+        const pwd = document.querySelector("#pwd");
+        const passwordError = document.querySelector('.password-error');
+        pwd.addEventListener('input', function () {
+            let pwdRegex = RegExp("^(?=.*[A-Z])(?=.*[a-z])[^\\s]{8,}$");
+            if (pwdRegex.test(pwd.value))
+                passwordError.textContent = "";
+            else 
+                passwordError.textContent = "password number is Incorrect";
+        });
+
+
         const salary = document.querySelector('#salary');
         const output = document.querySelector('.salary-output');
         output.textContent = salary.value;
